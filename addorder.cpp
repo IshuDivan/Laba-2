@@ -35,7 +35,14 @@ void addorder (string orderfile){
 	int deadline, dtime;
 	string address;
 	int courierid=0;		
-	cin >>price>>deadline>> address;//спрашиваем данные о добавляемом заказе, остальные данные присваиваем автоматически
+	while(l==0){
+		l=1;
+		cin >>price>>deadline>> address;//спрашиваем данные о добавляемом заказе, остальные данные присваиваем автоматически
+		if(deadline<10){
+			cout << "Sorry, we can't deliver your order that fast. Please, try again"<<endl;
+			l=0;
+		}
+	}		
 	ido=k+1;
 	dtime=deadline;
 	while(l==0){//проверка на совпадение id
